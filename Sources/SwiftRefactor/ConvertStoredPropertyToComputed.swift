@@ -70,12 +70,12 @@ public struct ConvertStoredPropertyToComputed: SyntaxRefactoringProvider {
       typeAnnotation = existingType
     } else if let providedType = context.type {
       typeAnnotation = TypeAnnotationSyntax(
-        colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
+        colon: .colonToken(trailingTrivia: .space),
         type: providedType
       )
     } else {
       typeAnnotation = TypeAnnotationSyntax(
-        colon: .colonToken(leadingTrivia: [], trailingTrivia: .space),
+        colon: .colonToken(trailingTrivia: .space),
         type: TypeSyntax(stringLiteral: "<#Type#>")
       )
     }
