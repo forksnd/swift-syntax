@@ -2781,14 +2781,13 @@ final class StatementExpressionTests: ParserTestCase {
         ),
         DiagnosticSpec(
           locationMarker: "2️⃣",
-          // FIXME: "expected pattern and ':' in switch case". https://github.com/swiftlang/swift-syntax/issues/3158
-          message: "expected expression and ':' in switch case",
-          fixIts: ["insert expression and ':'"]
+          message: "expected pattern and ':' in switch case",
+          fixIts: ["insert pattern and ':'"]
         ),
       ],
       fixedSource: """
         switch x {
-          @<#identifier#> case <#expression#>:
+          @<#identifier#> case <#pattern#>:
         }
         """
     )
